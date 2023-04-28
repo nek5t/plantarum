@@ -1,0 +1,14 @@
+{
+    "name": "plantarum/plantarum-post-types",
+    "description": "Register custom content types and taxonomies for Plantarum",
+    "type": "wordpress-plugin",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Eric Phillips",
+            "email": "github@nekvtcode.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}

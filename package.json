@@ -1,0 +1,13 @@
+{
+  "name": "@nek5t/plantarum",
+  "description": "A game of plant identification",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm"
+  },
+  "author": "Eric Phillips",
+  "license": "GPL",
+  "devDependencies": {
+    "@wordpress/eslint-plugin": "^14.4.0",
+    "@wordpress/prettier-config": "^2.14.0"
+  }
+}

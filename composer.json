@@ -1,0 +1,53 @@
+{
+    "name": "nek5t/plantarum",
+    "description": "A game of plant identification",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Eric Phillips",
+            "email": "github@nekvtcode.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "repositories": [
+        {
+          "type": "composer",
+          "url": "https://wpackagist.org",
+          "only": [
+            "wpackagist-plugin/*",
+            "wpackagist-theme/*"
+          ]
+        },
+        {
+            "type": "path",
+            "url": "packages/*",
+            "symlink": true
+        }
+    ],
+    "require": {
+        "plantarum/plantarum-post-types": "@dev",
+        "johnpbloch/wordpress": "^6.2",
+        "wpackagist-plugin/query-monitor": "*"
+    },
+    "config": {
+        "allow-plugins": {
+            "johnpbloch/wordpress-core-installer": true,
+            "composer/installers": true
+        }
+    },
+    "extra": {
+        "wordpress-install-dir": ".wordpress",
+        "installer-paths": {
+            ".wordpress/wp-content/mu-plugins/{$name}/": [
+                "type:wordpress-muplugin"
+            ],
+           ".wordpress/wp-content/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ],
+           ".wordpress/wp-content/themes/{$name}/": [
+                "type:wordpress-theme"
+            ]
+        }
+    }
+}
