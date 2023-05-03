@@ -34,6 +34,7 @@ function plantarum_plant_init() {
 			'show_ui'               => true,
 			'show_in_nav_menus'     => true,
 			'supports'              => [ 'title' ],
+			'register_meta_box_cb'	=> 'plantarum_meta_box_cb',
 			'has_archive'           => false,
 			'rewrite'               => [
 				'slug' => 'plants'
@@ -116,3 +117,13 @@ function plantarum_plant_bulk_updated_messages( $bulk_messages, $bulk_counts ) {
 }
 
 add_filter( 'bulk_post_updated_messages', 'plantarum_plant_bulk_updated_messages', 10, 2 );
+
+function plantarum_meta_box_cb( $post ) {
+	add_meta_box( 'plantarum-image-gallery', __( 'Images', 'plantarum' ), 'plantarum_render_gallery_meta_box', null, 'normal', 'high' );
+}
+
+function plantarum_render_gallery_meta_box( $post ) {
+	$images = get_attached_media( 'image' );
+
+	// Display the metabox
+}
