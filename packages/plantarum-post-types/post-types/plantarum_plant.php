@@ -124,6 +124,14 @@ function plantarum_meta_box_cb( $post ) {
 
 function plantarum_render_gallery_meta_box( $post ) {
 	$images = get_attached_media( 'image' );
-
-	// Display the metabox
+	?>
+	<div class="plantarum-mb-images">
+		<?php foreach( $images as $image ) : ?>
+			<div class="plantarum-mb-image">
+				<button class="plantarum-mb-image-remove"><?php _e( 'Remove', 'plantarum' ); ?></button>
+				<?php echo wp_get_attachment_image( $image->ID ); ?>
+		<?php endforeach; ?>
+		<div id="plantarum-mb-add-image"><?php _e( 'Add New' ); ?></div>
+	</div><!--.plantarum-mb-images-->
+	<?php
 }
